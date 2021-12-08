@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(72deg, #1b1366 1%, #100a4d 99%);/*72deg representa o local de inicio*/
+}
+.content{
+    height: 70vh;
+    width: 70vw;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.navigation{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+}
+.bar{
+    width: 70px;
+    height: 17px;
+    border: 5px solid #c1d9cd;
+    margin: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.6s;/*tempo da animação do hover abaixo*/
+}
+.bar:hover{/*para fazer a animação na class hover quando passar o mouse em cima*/
+    background: #c1d9cd;
+}
+input{
+    display: none;/*para fazer as bolinhas do input desaparecer*/
+}
+.slides{
+    display: flex;
+    width: 500%;
+    height: 100%;
+}
+.slide{
+    position: relative;
+    width: 25%;/*Aqui é 25% porque sao 4 imagens e o tamanho do pai é 100%*/
+    transition: 0.6s;
+}
+#img{
+    position: absolute;
+    opacity: 90%;
+    bottom: -150px;
+}
+#txt{
+    position: absolute;
+    width: 50vw;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(255, 255, 255);
+    left: 140px;
+    bottom: 200px;
+}
+#slide1:checked ~ .s1{
+    margin-left: 0;
+}
+#slide2:checked ~ .s1{
+    margin-left: -25%;/*100 dividido para 4*/
+}
+#slide3:checked ~ .s1{
+    margin-left: -50%;/*somando -25%*/
+}
+#slide4:checked ~ .s1{
+    margin-left: -75%;/*somando -25%*/
+}
